@@ -21,8 +21,6 @@ public class Task implements Serializable, Comparable<Task> {
 
     private LocalDateTime updatedAt;
 
-    private final DateTimeFormatter FORMATTER = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
-
     public Task(long id, String description, Status status,
                 LocalDateTime createdAt, LocalDateTime updatedAt) {
         checkId(id);
