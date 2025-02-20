@@ -42,27 +42,10 @@ public class TaskRepositoryImpl implements TaskRepository {
         List<Task> tasks = new ArrayList<>();
         final DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
 
-//        for (int i = 0; i < jsonArray.length(); i++) {
-//            JSONObject taskJson = jsonArray.getJSONObject(i);
-//            tasks.add(new Task(
-//                    taskJson.getInt("id"),
-//                    taskJson.getString("description"),
-//                    Status.valueOf(taskJson.getString("status")),
-//                    LocalDateTime.parse(taskJson.getString("createdAt"), formatter) ,
-//                    LocalDateTime.parse(taskJson.getString("updatedAt"), formatter)
-//            ));
-//        }
-
         return tasks;
     }
 
     public static void writeToFile(List<Task> tasks, String fileName) throws IOException {
-//        JSONArray jsonArray = new JSONArray();
-//
-//        for (Task task : tasks) {
-//            jsonArray.put(task.toJSON());
-//        }
-
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
             writer.write(JsonMapper.taskToJson(tasks));
         }
